@@ -1,0 +1,7 @@
+.cells-row {
+  margin-bottom: 15px;
+}
+
+.cells-row:last-child {
+  margin-bottom: 0;
+}

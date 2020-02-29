@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  NODE_VERSION: '8.x'
+  NODE_VERSION: '8.12.0'
 
 jobs:
   deploy:
@@ -18,10 +18,11 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - uses: actions/checkout@v1
-      - name: Install
+      - name: Yarn Install
         run: |
-          npm install
-          npm run build -- --prod
+          npm install -g yarn
+          yarn install
+          yarn build
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
